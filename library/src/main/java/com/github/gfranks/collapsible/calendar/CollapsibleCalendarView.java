@@ -34,7 +34,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class CollapsibleCalendarView extends LinearLayout implements View.OnClickListener, View.OnTouchListener {
+public class CollapsibleCalendarView extends LinearLayout implements View.OnClickListener {
 
     private final LayoutInflater mInflater;
     private final RecycleBin mRecycleBin = new RecycleBin();
@@ -111,7 +111,6 @@ public class CollapsibleCalendarView extends LinearLayout implements View.OnClic
         setOrientation(VERTICAL);
 
         mGestureDetector = new GestureDetector(context, new GestureListener());
-        setOnTouchListener(this);
     }
 
     @Override
@@ -129,15 +128,6 @@ public class CollapsibleCalendarView extends LinearLayout implements View.OnClic
     public boolean onTouchEvent(@NonNull MotionEvent event) {
         super.onTouchEvent(event);
         return mResizeManager.onTouchEvent(event);
-    }
-
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        if (mDisableSwipe) {
-            return true;
-        }
-
-        return mGestureDetector.onTouchEvent(event);
     }
 
     @Override
