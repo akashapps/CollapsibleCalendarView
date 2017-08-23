@@ -12,11 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.github.gfranks.collapsible.calendar.R;
 
-public class DayView extends LinearLayout {
+public class DayView extends RelativeLayout {
 
     private static final int[] STATE_CURRENT = {R.attr.state_current};
 
@@ -37,8 +38,7 @@ public class DayView extends LinearLayout {
 
     public DayView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        setOrientation(VERTICAL);
-        setGravity(Gravity.CENTER);
+//        setGravity(Gravity.CENTER);
     }
 
     @Override

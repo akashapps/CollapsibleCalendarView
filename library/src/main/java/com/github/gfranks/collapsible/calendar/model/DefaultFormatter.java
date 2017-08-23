@@ -13,7 +13,7 @@ public class DefaultFormatter implements Formatter {
     private DateTimeFormatter monthHeaderFormatter;
 
     public DefaultFormatter() {
-        this("E", "MMMM yyyy", "MMMM yyyy");
+        this("E", "MMM yyyy", "MMM yyyy");
     }
 
     public DefaultFormatter(String dayPattern, String weekPattern, String monthPattern) {
@@ -31,9 +31,9 @@ public class DefaultFormatter implements Formatter {
     public String getHeaderText(@CalendarType int type, LocalDate from, LocalDate to) {
         switch (type) {
             case CalendarUnit.TYPE_WEEK:
-                return from.toString(weekHeaderFormatter);
+                return from.toString(weekHeaderFormatter).toUpperCase();
             case CalendarUnit.TYPE_MONTH:
-                return from.toString(monthHeaderFormatter);
+                return from.toString(monthHeaderFormatter).toUpperCase();
             default:
                 throw new IllegalStateException("Unknown calendar type");
         }

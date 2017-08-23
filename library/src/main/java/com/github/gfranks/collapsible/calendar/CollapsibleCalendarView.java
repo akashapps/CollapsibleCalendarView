@@ -104,7 +104,7 @@ public class CollapsibleCalendarView extends LinearLayout implements View.OnClic
             }
         }
 
-        mManager = new CalendarManager(LocalDate.now(), startingState, LocalDate.now(), LocalDate.now().plusYears(1));
+        mManager = new CalendarManager(LocalDate.now(), startingState, LocalDate.now().minusYears(1), LocalDate.now().plusYears(1));
         mInflater = LayoutInflater.from(context);
         mResizeManager = new ResizeManager(this);
         inflate(context, R.layout.calendar_layout, this);
@@ -473,10 +473,15 @@ public class CollapsibleCalendarView extends LinearLayout implements View.OnClic
             DayView dayView = (DayView) weekView.getChildAt(i);
 
             dayView.setText(day.getText());
+            dayView.setCurrent(day.isCurrent());
+            dayView.setHasEvent(mManager.dayHasEvent(day));
+            dayView.setEventIndicatorColor(mEventIndicatorColor);
+
             if (day.getDate().getValue(1) != mManager.getActiveMonth().getValue(1) && getState() == CollapsibleState.MONTH) {
                 if (mShowInactiveDays) {
                     dayView.setAlpha(0.5f);
                     dayView.setVisibility(View.VISIBLE);
+                    dayView.setHasEvent(false);
                 } else {
                     dayView.setVisibility(View.INVISIBLE);
                 }
@@ -484,10 +489,8 @@ public class CollapsibleCalendarView extends LinearLayout implements View.OnClic
                 dayView.setAlpha(1f);
                 dayView.setVisibility(View.VISIBLE);
             }
+
             dayView.setSelected(day.isSelected(), mSelectedDayBackgroundColor, mSelectedDayTextColor, mDayTextColor);
-            dayView.setCurrent(day.isCurrent());
-            dayView.setHasEvent(mManager.dayHasEvent(day));
-            dayView.setEventIndicatorColor(mEventIndicatorColor);
 
             boolean enabled = day.isEnabled();
             dayView.setEnabled(enabled);

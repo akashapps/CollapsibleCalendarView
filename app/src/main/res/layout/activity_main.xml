@@ -8,16 +8,16 @@
         android:id="@+id/calendar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#48848F"
+        android:background="@android:color/white"
         android:paddingRight="5dp"
         android:paddingLeft="5dp"
         app:ccv_state="month"
-        app:ccv_arrowColor="#FFFFFF"
-        app:ccv_headerTextColor="#FFFFFF"
+        app:ccv_arrowColor="@android:color/black"
+        app:ccv_headerTextColor="#2196f3"
         app:ccv_weekDayTextColor="#FFFFFF"
-        app:ccv_dayTextColor="#FFFFFF"
-        app:ccv_eventIndicatorColor="#FFE18B"
-        app:ccv_selectedDayBackgroundColor="#175662"
+        app:ccv_dayTextColor="@android:color/black"
+        app:ccv_eventIndicatorColor="#2196f3"
+        app:ccv_selectedDayBackgroundColor="#2196f3"
         app:ccv_allowStateChange="true"/>
 
     <ListView
