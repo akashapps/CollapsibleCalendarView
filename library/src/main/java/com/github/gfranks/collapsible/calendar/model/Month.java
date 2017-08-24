@@ -1,5 +1,7 @@
 package com.github.gfranks.collapsible.calendar.model;
 
+import android.support.annotation.NonNull;
+
 import org.joda.time.LocalDate;
 
 import java.util.ArrayList;
@@ -73,18 +75,6 @@ public class Month extends RangeUnit {
             setFrom(date.withDayOfMonth(1));
             setTo(getFrom().withDayOfMonth(getFrom().dayOfMonth().getMaximumValue()));
 
-            build();
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    @Override
-    public boolean setPeriod(LocalDate date) {
-        if (hasDate(date)) {
-            setFrom(date.withDayOfMonth(1));
-            setTo(getFrom().withDayOfMonth(getFrom().dayOfMonth().getMaximumValue()));
             build();
             return true;
         } else {
