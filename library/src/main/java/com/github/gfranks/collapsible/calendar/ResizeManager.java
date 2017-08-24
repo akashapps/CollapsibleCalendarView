@@ -5,7 +5,6 @@ import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.ViewConfiguration;
 import android.widget.Scroller;
-
 import com.github.gfranks.collapsible.calendar.model.CollapsibleState;
 
 class ResizeManager {
@@ -129,7 +128,7 @@ class ResizeManager {
 
         final int yDIff = calculateDistance(ev);
 
-        if (Math.abs(yDIff) > mTouchSlop) {
+        if (Math.abs(yDIff) > mTouchSlop) { // FIXME this should happen only if dragging int right direction
             mState = State.DRAGGING;
             mDragStartY = ev.getY();
 

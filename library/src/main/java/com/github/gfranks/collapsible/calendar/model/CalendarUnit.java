@@ -1,5 +1,7 @@
 package com.github.gfranks.collapsible.calendar.model;
 
+import android.support.annotation.NonNull;
+
 import org.joda.time.DateTimeConstants;
 import org.joda.time.LocalDate;
 
@@ -49,13 +51,13 @@ public abstract class CalendarUnit {
         mSelected = selected;
     }
 
-    public abstract boolean hasDate(LocalDate date);
+    public abstract boolean hasDate(@NonNull LocalDate date);
 
     public abstract boolean hasNext();
 
     public abstract boolean hasPrev();
 
-    public abstract boolean setPeriod(LocalDate date);
+    public abstract boolean setPeriod(@NonNull LocalDate date);
 
     public abstract boolean next();
 

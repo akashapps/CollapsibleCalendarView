@@ -67,6 +67,19 @@ public class Month extends RangeUnit {
         }
     }
 
+    @Override public boolean setPeriod(@NonNull LocalDate date) {
+
+        if (hasDate(date)) {
+            setFrom(date.withDayOfMonth(1));
+            setTo(getFrom().withDayOfMonth(getFrom().dayOfMonth().getMaximumValue()));
+
+            build();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     @Override
     public boolean setPeriod(LocalDate date) {
         if (hasDate(date)) {

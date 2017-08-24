@@ -1,5 +1,7 @@
 package com.github.gfranks.collapsible.calendar.model;
 
+import android.support.annotation.NonNull;
+
 import org.joda.time.DateTimeConstants;
 import org.joda.time.Days;
 import org.joda.time.LocalDate;
@@ -31,8 +33,8 @@ public abstract class RangeUnit extends CalendarUnit {
         return mMaxDate;
     }
 
-    @Override
-    public boolean hasDate(LocalDate date) {
+    @Override public boolean hasDate(@NonNull LocalDate date) {
+
         boolean min = true;
         boolean max = true;
 
