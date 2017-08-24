@@ -480,7 +480,7 @@ public class CollapsibleCalendarView extends LinearLayout implements View.OnClic
 
             if (day.getDate().getValue(1) != mManager.getActiveMonth().getValue(1) && getState() == CollapsibleState.MONTH) {
                 if (mShowInactiveDays) {
-                    dayView.setAlpha(0.5f);
+                    dayView.setAlpha(0.2f);
                     dayView.setVisibility(View.VISIBLE);
                     dayView.setHasEvent(false);
                 } else {

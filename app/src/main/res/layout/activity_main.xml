@@ -14,7 +14,7 @@
         app:ccv_state="month"
         app:ccv_arrowColor="@android:color/black"
         app:ccv_headerTextColor="#2196f3"
-        app:ccv_weekDayTextColor="#FFFFFF"
+        app:ccv_weekDayTextColor="#2196f3"
         app:ccv_dayTextColor="@android:color/black"
         app:ccv_eventIndicatorColor="#2196f3"
         app:ccv_selectedDayBackgroundColor="#2196f3"
